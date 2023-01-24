@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/*Geral:*/
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body *{
+    box-sizing: border-box;
+}
+
+/*Div principal:*/
+.main-login{
+    width: 100vw;/*vw = porcentagem da largura da viewport; 100vw = 1000px*/
+    height: 100vh;
+    background-color: #201b2c;
+    display: flex;/*Conteúdo lateral*/
+    justify-content: center;/*Justifica o conteúdo no eixo x*/
+    align-items: center;/*Justifica no eixo y*/
+}
+
+/*Div esquerda:*/
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1{
+    font-size: 2vw;
+    color: #77ffc0;
+}
+
+.imagem-login{
+    width: 35vw;
+}
+
+/*Div direita:*/
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Card com conteúdo de login:*/
+.card-login{
+    width: 60%;/*A %(porcentagem) pega o tamanho do container em que está o elemento, neste caso, a div*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;/*Aqui o preenchimenho se refere ao eixo x e o y*/
+    background-color: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;/*x(direita ou esquerda), y(cima ou baixo), blur e color*/
+}
+
+.card-login > h1{
+    font-weight: 800;
+    color: #00ff88;
+    margin: 0;
+}
+/*Div úsuario e senha:*/
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;/*Quando o flex-drection é usado o eixo x(justify-content) passa a ser o eixo y(align-items) e vice-versa*/
+    justify-self: center;
+    align-items: flex-start;
+    margin: 10px 0px;/* eixo x, eixo y*/
+}
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    box-sizing: border-box;/*Funciona basicamente como uma barreia que impede que o conteúdo ultrapasse a sua divisão*/ 
+}
+
+.textfield > label{
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+/*Botão do login:*/
+.btn-login{
+    width: 100%;
+    margin: 25px;
+    padding: 16px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;/*Espaçamento*/
+    color: #2b134b;
+    background-color: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;/*Aqui o quarto valor(-12px) é um spread*/
+}
+
+@media only screen and(max-width: 950px){
+   .card-login{
+    width: 85%;
+   } 
+}
+
+@media only screen and(max-width: 600px){
+    .main-login{
+     flex-direction: column;
+    } 
+    .left-login > h1{ 
+        display: none;
+    }
+    .left-login{
+        width: 100%;
+        display: flex;
+    }
+    .rigth-login{
+        width: 100%;
+        display: flex;
+    }
+    .imagem-login{
+        width: 50vw;
+    }
+    .card-login{
+        width: 90%;
+    }
+}
